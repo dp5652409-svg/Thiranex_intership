@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Dashboard Pro</title>
+
+<style>
+:root{
+--primary:#4f46e5;
+--bg:#0f172a;
+--card:rgba(255,255,255,0.1);
+--text:#fff;
+}
+
+.light{
+--bg:#f4f6f9;
+--card:#fff;
+--text:#222;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+transition:.3s;
+}
+
+header{
+text-align:center;
+padding:30px;
+background:var(--primary);
+color:white;
+}
+
+header h1{
+font-size:2.5rem;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.theme-btn{
+position:fixed;
+top:15px;
+right:15px;
+padding:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--card);
+backdrop-filter:blur(10px);
+padding:20px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+
+.card:hover{
+transform:translateY(-5px);
+transition:.3s;
+}
+
+h2{
+margin-bottom:15px;
+color:#60a5fa;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.stat{
+background:#2563eb;
+padding:15px;
+border-radius:10px;
+text-align:center;
+color:white;
+font-weight:bold;
+}
+
+.skill{
+margin:12px 0;
+}
+
+.bar{
+background:#ddd;
+height:10px;
+border-radius:10px;
+overflow:hidden;
+}
+
+.bar span{
+display:block;
+height:100%;
+background:#22c55e;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin:5px 0;
+border:none;
+border-radius:8px;
+}
+
+button{
+padding:10px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:#2563eb;
+color:white;
+}
+
+ul{
+list-style:none;
+}
+
+li{
+background:rgba(255,255,255,.1);
+padding:10px;
+margin:8px 0;
+border-radius:8px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.completed{
+text-decoration:line-through;
+opacity:.6;
+}
+
+a{
+color:#60a5fa;
+}
+
+@media(max-width:768px){
+.container{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<button class="theme-btn" onclick="toggleTheme()">🌙 Theme</button>
+
+<header>
+<h1>Divyanshu Raj Patel</h1>
+<p>Aspiring Full Stack Developer</p>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#todo">To-Do</a>
+<a href="#weather">Weather</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="card" id="about">
+<h2>About Me</h2>
+<p>B.Tech CSE Student at Swami Vivekanand Subharti University.</p>
+<p>CGPA: 8.9</p>
+
+<div class="stats">
+<div class="stat">🎓 CGPA 8.9</div>
+<div class="stat">🤖 NPTEL Elite Certificate 76%</div>
+<div class="stat">🏆 Hackathon Winner</div>
+<div class="stat">💼 Internship</div>
+</div>
+
+<br>
+
+<h3>Education</h3>
+<p>10th - 83.6% (BSEB)</p>
+<p>12th - 83.5% (BSEB)</p>
+<p>Swami Vivekanand Subharti University - 8.9(SGPA)</p>
+
+
+
+<br>
+
+<h3>Internship</h3>
+<p>Code Alpha - C Programming Internship</p>
+<p>Code Alpha - Pyhton Programming Internship</p>
+<p>Code Alpha - Fronted Development Internship</p>
+
+<br>
+
+<h3>Achievements</h3>
+<ul>
+<li>College Code War Hackathon Winner</li>
+<li>HackerRank Orchestrate Participant</li>
+</ul>
+</div>
+
+<div class="card" id="skills">
+<h2>Skills</h2>
+
+<div class="skill">
+<p>HTML</p>
+<div class="bar"><span style="width:95%"></span></div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="bar"><span style="width:90%"></span></div>
+</div>
+
+<div class="skill">
+<p>JavaScript</p>
+<div class="bar"><span style="width:80%"></span></div>
+</div>
+
+<div class="skill">
+<p>Python</p>
+<div class="bar"><span style="width:85%"></span></div>
+</div>
+
+<div class="skill">
+<p>C Programming</p>
+<div class="bar"><span style="width:75%"></span></div>
+</div>
+
+<div class="skill">
+<p>Java</p>
+<div class="bar"><span style="width:75%"></span></div>
+</div>
+
+<p><b>Certification:</b> NPTEL Elite Certificate on Experimental Robotics (76%)</p>
+</div>
+
+<div class="card" id="todo">
+<h2>Advanced To-Do App</h2>
+
+<input type="text" id="taskInput" placeholder="Enter Task">
+<button onclick="addTask()">Add Task</button>
+
+<ul id="taskList"></ul>
+</div>
+
+<div class="card" id="weather">
+<h2>Weather Dashboard</h2>
+
+<input type="text" id="city" placeholder="Enter City">
+<button onclick="getWeather()">Search</button>
+
+<div id="weatherResult"></div>
+</div>
+
+<div class="card" id="contact">
+<h2>Contact</h2>
+
+<p>📧 Email: dp5652409@gmail.com</p>
+<p>📱 Mobile: 7488951918</p>
+
+<p>
+🔗 Github:
+<a href="https://github.com/dp5652409-svg" target="_blank">
+dp5652409-svg
+</a>
+</p>
+
+<p>
+🔗 LinkedIn:
+<a href="https://www.linkedin.com/in/divyanshu-raj-patel-976791383" target="_blank">
+Profile
+</a>
+</p>
+
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Message"></textarea>
+<button type="submit">Send</button>
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleTheme(){
+document.body.classList.toggle("light");
+}
+
+let tasks=JSON.parse(localStorage.getItem("tasks"))||[];
+
+function saveTasks(){
+localStorage.setItem("tasks",JSON.stringify(tasks));
+}
+
+function renderTasks(){
+
+let list=document.getElementById("taskList");
+list.innerHTML="";
+
+tasks.forEach((task,index)=>{
+
+let li=document.createElement("li");
+
+li.innerHTML=`
+<span class="${task.completed?'completed':''}">
+${task.text}
+</span>
+
+<div>
+<button onclick="toggleTask(${index})">✓</button>
+<button onclick="deleteTask(${index})">🗑</button>
+</div>
+`;
+
+list.appendChild(li);
+
+});
+}
+
+function addTask(){
+
+let input=document.getElementById("taskInput");
+
+if(input.value.trim()=="") return;
+
+tasks.push({
+text:input.value,
+completed:false
+});
+
+saveTasks();
+renderTasks();
+input.value="";
+}
+
+function toggleTask(index){
+tasks[index].completed=!tasks[index].completed;
+saveTasks();
+renderTasks();
+}
+
+function deleteTask(index){
+tasks.splice(index,1);
+saveTasks();
+renderTasks();
+}
+
+renderTasks();
+
+async function getWeather(){
+
+let city=document.getElementById("city").value;
+
+try{
+
+const geo=await fetch(
+`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`
+);
+
+const geoData=await geo.json();
+
+const lat=geoData.results[0].latitude;
+const lon=geoData.results[0].longitude;
+
+const weather=await fetch(
+`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
+);
+
+const data=await weather.json();
+
+document.getElementById("weatherResult").innerHTML=`
+<h3>${city}</h3>
+<p>🌡 Temperature: ${data.current_weather.temperature}°C</p>
+<p>💨 Wind Speed: ${data.current_weather.windspeed} km/h</p>
+`;
+
+}
+catch{
+document.getElementById("weatherResult").innerHTML=
+"<p>City not found</p>";
+}
+}
+</script>
+
+</body>
+</html>
